@@ -5,7 +5,7 @@ class GUI():
     title_lbl = Label(root,text="TRANSLATOR",font=('Cooper Black','50','bold'),fg='#ECC602',bg='#4A4A4A')
     enter_lbl = Label(root, text='ENTER', font=('Lilita One', '29', 'bold'), fg='#ECC602', bg='#4A4A4A')
     enter_text= Text(root, font=('Casterllar', '18', 'bold'), width=37, height=3, bd=4, relief=GROOVE, wrap='word')
-    meaning_lbl = Label(root, text='TRANSLATE', font=('Lilita One', '29', 'bold'), fg='#ECC602', bg='#4A4A4A')
+    meaning_lbl = Label(root, text='MEANING', font=('Lilita One', '29', 'bold'), fg='#ECC602', bg='#4A4A4A')
     meaning_text = Text(root, font=('Casterllar', '18', 'bold'), width=37, height=3.5, bd=4, relief=GROOVE, wrap='word')
     search_img = PhotoImage(file='search.png')
     search_btn = Button(root, image=search_img, bd=0, bg='#4A4A4A', activebackground="whitesmoke")
