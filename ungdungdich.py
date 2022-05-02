@@ -124,7 +124,7 @@ class GUI():
         self.meaning_text.insert(END, out_put.text)
 
         #lưu các từ đã nhập vào file
-        fh = open('history.txt', 'a')
+        fh = open('history.txt', 'a', encoding='utf-8')
         fh.write(in_put)
         fh.close()
 
@@ -133,7 +133,7 @@ class GUI():
         self.meaning_text.delete(1.0, END)
 
     def show_history(self):
-        fh = open('history.txt', 'r')
+        fh = open('history.txt', 'r', encoding='utf-8')
         text = fh.read()
         self.history_text.delete(1.0, END)
         self.history_text.insert(END, text)
@@ -146,7 +146,7 @@ class GUI():
         fh.close()
 
     def exit(self): #xác nhận lại có muốn đóng cửa sổ
-        res = messagebox.askyesno('Confirm','Do you want to exit?')
+        res = messagebox.askyesno('Confirm', 'Do you want to exit?')
         if res == TRUE:
             self.root.destroy()
         else:
