@@ -11,14 +11,14 @@ class GUI():
     history_frame = Frame(root, bg='#D3F4FF')
 
     #----------mainmenu frame----------
-    mainmenu_frame_title = Label(mainmenu_frame, text='WELCOME TO TRANSLATOR', font=('Cooper Black','65','bold'), fg='#1F3C88', bg='#D3F4FF')
+    mainmenu_frame_title = Label(mainmenu_frame, text='WELCOME TO TRANSLATOR', font=('Cooper Black', '65', 'bold'), fg='#1F3C88', bg='#D3F4FF')
     translate_btn = Button(mainmenu_frame, text='Translate', font=('Orelega One', '30'), width=30, height=1, fg='#FFFFFF', bg='#1EAFED', bd=7)
     history_btn = Button(mainmenu_frame, text='History', font=('Orelega One', '30'), width=30, height=1, fg='#FFFFFF', bg='#1EAFED', bd=7)
     exit_btn = Button(mainmenu_frame, text='Exit', font=('Orelega One', '30'), width=30, height=1, fg='#FFFFFF', bg='#1EAFED', bd=7)
 
 
     #------------translate frame-----------
-    translate_frame_title = Label(translate_frame, text='TRANSLATOR', font=('Cooper Black','70','bold'), fg='#1F3C88', bg='#D3F4FF')
+    translate_frame_title = Label(translate_frame, text='TRANSLATOR', font=('Cooper Black', '70', 'bold'), fg='#1F3C88', bg='#D3F4FF')
     frame1 = Frame(translate_frame, bg='#D3F4FF')
     enter_lbl = Label(frame1, text='ENTER', font=('Lilita One', '32', 'bold'), fg='#1F3C88', bg='#D3F4FF')
     enter_text = Text(frame1, font=('Casterllar', '18', 'bold'), width=40, height=7, bd=6, relief=GROOVE, wrap='word')
@@ -26,26 +26,26 @@ class GUI():
     meaning_text = Text(frame1, font=('Casterllar', '18', 'bold'), width=40, height=7, bd=6, relief=GROOVE, wrap='word')
     button_frame = Frame(translate_frame, bg='#D3F4FF')
     trans_img = PhotoImage(file='trans.png')
-    trans_btn = Button(button_frame, image=trans_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
+    trans_btn = Button(button_frame, image=trans_img, bd=0, bg='#D3F4FF', activebackground='whitesmoke')
     clear_img = PhotoImage(file='delete.png')
-    clear_btn = Button(button_frame, image=clear_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
+    clear_btn = Button(button_frame, image=clear_img, bd=0, bg='#D3F4FF', activebackground='whitesmoke')
     return_img = PhotoImage(file='home.png')
-    return_btn = Button(button_frame, image=return_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
-    frame_option = LabelFrame(translate_frame, text="Option", bg='#1F3C88', fg='#FFFFFF', font=('Allura', '15', 'bold'))
-    lang = ["English to Vietnamese", "Vietnamese to English"]
+    return_btn = Button(button_frame, image=return_img, bd=0, bg='#D3F4FF', activebackground='whitesmoke')
+    frame_option = LabelFrame(translate_frame, text='Option', bg='#1F3C88', fg='#FFFFFF', font=('Allura', '15', 'bold'))
+    lang = ['English to Vietnamese', 'Vietnamese to English']
     x = IntVar()
-    x.set("0")
+    x.set('0')
 
     #------------history frame----------
     history_frame_title = Label(history_frame, text='History', font=('Cooper Black', '70', 'bold'), fg='#1F3C88', bg='#D3F4FF')
     history_text = Text(history_frame, width=100, height=18, bd=8, relief=GROOVE, wrap='word')
     hisbtn_frame = Frame(history_frame, bg='#D3F4FF')
     showhis_img = PhotoImage(file='showhistory.png')
-    showhis_btn = Button(hisbtn_frame, text='Show History', image=showhis_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
+    showhis_btn = Button(hisbtn_frame, image=showhis_img, bd=0, bg='#D3F4FF', activebackground='whitesmoke')
     back_img = PhotoImage(file='back.png')
-    back_btn = Button(hisbtn_frame, image=back_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
-    back_btn = Button(hisbtn_frame, image=back_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
-    clear_his_btn = Button(hisbtn_frame, image=clear_img, bd=0, bg='#D3F4FF', activebackground="whitesmoke")
+    back_btn = Button(hisbtn_frame, image=back_img, bd=0, bg='#D3F4FF', activebackground='whitesmoke')
+    clear_his_img = PhotoImage(file='clear_his.png')
+    clear_his_btn = Button(hisbtn_frame, image=clear_his_img, bd=0, bg='#D3F4FF', activebackground='whitesmoke')
 
     def __init__(self):
         self.root.rowconfigure(0, weight=1)
@@ -77,7 +77,7 @@ class GUI():
         self.frame_option.pack(pady=15)
         for index in range(len(self.lang)):
             radiobutton = Radiobutton(self.frame_option, bg='#9FE8FA', text=self.lang[index], variable=self.x, value=index,
-                                      fg='black', font=("Mulish ExtraLight", '13', 'bold'))
+                                      fg='black', font=('Mulish ExtraLight', '13', 'bold'))
             radiobutton.pack(anchor=W)
         self.button_frame.pack(pady=30)
         self.trans_btn.pack(side='left', padx=15)
@@ -145,7 +145,7 @@ class GUI():
         self.history_text.delete(1.0, END)
         fh.close()
 
-    def exit(self): #xác nhận lại có muốn đóng cửa sổ
+    def exit(self):
         res = messagebox.askyesno('Confirm', 'Do you want to exit?')
         if res == TRUE:
             self.root.destroy()
